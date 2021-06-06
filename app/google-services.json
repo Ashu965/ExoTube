@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "246697303329",
+    "project_id": "vedioplayer-38cbe",
+    "storage_bucket": "vedioplayer-38cbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246697303329:android:961682ba4f95978bbcf260",
+        "android_client_info": {
+          "package_name": "com.example.vedioplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246697303329-558ta77c0139s0vvbubm6d4j88gm3ao0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDcwUv7_PC5RIQaf6Le1kBLDxxBdCrBB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246697303329-558ta77c0139s0vvbubm6d4j88gm3ao0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
