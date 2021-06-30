@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="AllVedios"
+         android:icon="@drawable/ic_all_news"
+        android:id="@+id/allVedioFragment"
+        />
+    <item android:title="Add Vedio"
+        android:id="@+id/addVedioFragment"
+        android:icon="@drawable/ic_baseline_add_vedio"
+        />
+</menu>

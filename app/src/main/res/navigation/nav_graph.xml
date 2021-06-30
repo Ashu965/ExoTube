@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allVedioFragment">
+    <fragment
+        android:id="@+id/addVedioFragment"
+        android:name="com.example.vedioplayer.ui.AddVedioFragment"
+        android:label="AddVedioFragment" />
+    <fragment
+        android:id="@+id/allVedioFragment"
+        android:name="com.example.vedioplayer.ui.AllVedioFragment"
+        android:label="AllVedioFragment" >
+        <action
+            android:id="@+id/action_allVedioFragment_to_showVedio"
+            app:destination="@id/showVedio" />
+    </fragment>
+    <fragment
+        android:id="@+id/showVedio"
+        android:name="com.example.vedioplayer.ui.showVedio"
+        android:label="showVedio" >
+        <argument
+            android:name="vedioUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>

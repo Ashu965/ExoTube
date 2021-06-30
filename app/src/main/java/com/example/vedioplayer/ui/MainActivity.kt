@@ -1,25 +1,29 @@
-package com.example.vedioplayer
+package com.example.vedioplayer.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.vedioplayer.R
+import com.example.vedioplayer.VedioViewModel
+import com.example.vedioplayer.VideoPlayerAdapter
+import com.example.vedioplayer.VideoPlayerRecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mRecyclerView: VideoPlayerRecyclerView
     private lateinit var vedioAdapter: VideoPlayerAdapter
     private val viewModel = VedioViewModel()
-    private val vedioDatabase = VedioDatabase()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_VedioPlayer)
         setContentView(R.layout.activity_main)
 
-        mRecyclerView = findViewById(R.id.recycler_view)
+        val bottomNavigationview = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationview.setupWithNavController(findNavController(R.id.navHostFragment))
+
+        /*mRecyclerView = findViewById(R.id.recycler_view)
         mRecyclerView.layoutManager = LinearLayoutManager(this)
 
         vedioAdapter = VideoPlayerAdapter(provideGlideInstance())
@@ -58,5 +62,6 @@ class MainActivity : AppCompatActivity() {
         if(::mRecyclerView.isInitialized)
             mRecyclerView.releasePlayer()
         super.onDestroy()
+    }*/
     }
 }

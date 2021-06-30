@@ -15,16 +15,19 @@ class VideoPlayerViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
     lateinit var requestManager: RequestManager
     val title = itemView.findViewById<TextView>(R.id.title)
     val thumbnail = itemView.findViewById<ImageView>(R.id.thumbnail)
-    val volumeControl =itemView.findViewById<ImageView>(R.id.volume_control)
     val progressBar = itemView.findViewById<ProgressBar>(R.id.progressBar)
     val mediaContainer = itemView.findViewById<FrameLayout>(R.id.media_container)
     val parent = itemView
 
-    fun onBind(mediaObject: Vedio,requestManager : RequestManager){
+    fun onBind(mediaObject: Vedio, requestManager: RequestManager) {
         this.requestManager = requestManager
         parent.setTag(this)
         title.setText(mediaObject.title)
         this.requestManager.load(mediaObject.imageUrl).into(thumbnail)
-    }
 
+    }
 }
+
+
+
+

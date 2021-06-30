@@ -12,12 +12,12 @@ class VedioDatabase {
 
     private val fireStore = FirebaseFirestore.getInstance()
     private val vedioCollection = fireStore.collection(VEDIO_COLLECTION)
-
     val vediosLiveData : MutableLiveData<List<Vedio>> = MutableLiveData()
 
     init {
         getAllVedios()
     }
+
     fun getAllVedios() {
        /* try{
           return  vedioCollection.get().await().toObjects(Vedio::class.java)
@@ -25,6 +25,9 @@ class VedioDatabase {
         catch (e : Exception){
             return emptyList()
         }*/
+
+         
+
         vedioCollection.addSnapshotListener { value, error ->
             if(value!=null)
               vediosLiveData.postValue(value.toObjects(Vedio::class.java))

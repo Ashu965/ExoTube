@@ -54,7 +54,7 @@ class VideoPlayerRecyclerView(
         videoSurfaceView.resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM
 
         videoPlayer = SimpleExoPlayer.Builder(context).build()
-        videoSurfaceView.useController = true
+        videoSurfaceView.useController = false
         videoSurfaceView.player = videoPlayer
 
         addOnScrollListener(object : RecyclerView.OnScrollListener(){
@@ -179,25 +179,25 @@ class VideoPlayerRecyclerView(
         viewHolderParent = holder.itemView
         thumbnail = holder.thumbnail
         progressBar = holder.progressBar
-        volumeControl = holder.volumeControl
+        //volumeControl = holder.volumeControl
         requestManager = holder.requestManager
         frameLayout = holder.mediaContainer
-
+        
         //addVedioView()
         videoSurfaceView.player = videoPlayer
-        //videoHolderParent.setOnClickListener(vedioViewClickListener)
+            //videoHolderParent.setOnClickListener(vedioViewClickListener)
 
         val dataSourceFactory = DefaultDataSourceFactory(context, Util.getUserAgent(context,"rvVedioPlayer"))
         val mediaUrl = mediaObjects[targetPosition].vedioUrl
-        if(mediaUrl!=null){
+        if(mediaUrl != null){
             val videoSource = ProgressiveMediaSource.Factory(dataSourceFactory)
                              .createMediaSource(Uri.parse(mediaUrl))
             videoPlayer.setMediaSource(videoSource)
             videoPlayer.prepare()
             videoPlayer.playWhenReady = true
         }
-
     }
+
     private fun getVisibleVideoSurfaceHeight(playPosition: Int): Int {
         val at =
             playPosition - (layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
@@ -215,7 +215,7 @@ class VideoPlayerRecyclerView(
     fun addVedioView(){
        frameLayout.addView(videoSurfaceView)
        isVideoViewAdded = true
-        videoSurfaceView.requestFocus()
+      //  videoSurfaceView.requestFocus()
        videoSurfaceView.visibility = VISIBLE
        videoSurfaceView.alpha= 1f
        thumbnail.visibility = INVISIBLE
@@ -249,7 +249,9 @@ class VideoPlayerRecyclerView(
         }
         viewHolderParent = null
     }
+
     fun setMediaObjects(mediaObjects : List<Vedio>){
         this.mediaObjects = mediaObjects
     }
+
 }
